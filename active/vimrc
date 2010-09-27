@@ -1,6 +1,5 @@
 syntax enable
 
-set background=dark
 set confirm
 set autoindent
 set hidden
