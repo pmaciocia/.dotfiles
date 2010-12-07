@@ -10,4 +10,8 @@ alias la="ls -a"
 alias ll="ls -l"
 alias ..="cd .."
 
+#. /etc/bash_completion
+
+export GREP_OPTIONS='--color=auto'
+
 PS1="[\[\033[0;32m\]\u\[\033[0m\]@\[\033[1;34m\]\h\[\033[0m\] \W]\$ "

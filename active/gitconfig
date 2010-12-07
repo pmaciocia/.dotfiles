@@ -1,3 +1,9 @@
 [user]
 	name = Peter Maciocia
 	email = peter.maciocia@gmail.com
+[colour]
+	ui = auto
+[alias]
+	l = log --graph --pretty=oneline --abbrev-commit --decorate
+	st = status
+	co = checkout
