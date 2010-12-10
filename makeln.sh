@@ -1,13 +1,20 @@
 #! /bin/bash
 
 DOTFILES=~/.dotfiles/active
+BACKUP=~/.dotfiles/backup
 
 cd ~
 
 for f in $DOTFILES/*; 
-do 
-	#echo "ln -s $f .$(basename $f)"
-	ln -s $f .$(basename $f); 
+do
+	DOTNAME=.$(basename $f);
+	if [ -f $DOTNAME ] 
+	then
+		echo "backing up $DOTNAME";
+		cp $DOTNAME $BACKUP/;
+	fi
+
+	ln -fs $f $DOTNAME; 
 done
 
 
