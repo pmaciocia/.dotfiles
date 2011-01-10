@@ -11,7 +11,6 @@ runtime macros/matchit.vim
 autocmd FileType python setlocal expandtab
 autocmd FileType java,c setlocal cindent
 autocmd FileType text setlocal tw=70
-autocmd FileType lisp DoSurrAll
 
 set sw=4
 set ts=4
