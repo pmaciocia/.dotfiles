@@ -1,5 +1,2 @@
-
 . ~/.bash_aliases
 . ~/.bash_exports
-. /etc/bash_completion
-

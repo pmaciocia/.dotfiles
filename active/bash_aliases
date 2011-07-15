@@ -1,0 +1,7 @@
+alias cl=clear
+alias ls="ls --color=auto -CF"
+alias l=ls
+alias la="ls -a"
+alias ll="ls -l"
+alias ..="cd .."
+alias sshare="ssh -o ControlMaster=auto ControlPath=/tmp/%r@%h:%p"
