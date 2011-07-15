@@ -1,0 +1,6 @@
+create files in the active directory eg. bashrc, vimrc
+run the makeln script
+
+this will link all the files in active to ~/.<file name> after backing up the files that are currently there
+
+
