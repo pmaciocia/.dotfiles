@@ -4,8 +4,13 @@
 [colour]
 	ui = auto
 [alias]
-	l = log --graph --pretty=oneline --abbrev-commit --decorate
+	ls = log --graph --pretty=oneline --abbrev-commit --decorate
+	la = log --graph --pretty=medium --stat --abbrev-commit -n 5 --decorate
+
 	st = status
 	co = checkout
+	br = branch
 [color]
 	ui = auto
+[branch]
+	autosetupmerge = true
