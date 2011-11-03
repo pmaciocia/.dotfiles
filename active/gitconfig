@@ -5,7 +5,7 @@
 	ui = auto
 [alias]
 	ls = log --graph --pretty=oneline --abbrev-commit --decorate
-	la = log --graph --pretty=medium --stat --abbrev-commit -n 5 --decorate
+	la = log --graph --pretty=medium --stat --abbrev-commit --decorate
 
 	st = status
 	co = checkout
@@ -14,3 +14,5 @@
 	ui = auto
 [branch]
 	autosetupmerge = true
+[rerere]
+	enabled = 1
