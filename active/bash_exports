@@ -1,8 +1,16 @@
 export PATH=$PATH:/usr/sbin/:/bin/:/sbin/
-export JAVA_HOME=/usr/lib/jvm/java-6-sun
-export MOZILLA_FIVE_HOME=/usr/lib64/xulrunner-1.9.2.9
-export PATH=$PATH:$JAVA_HOME/bin
 export HISTCONTROL=ignoredups
 export GREP_OPTIONS="--color=auto"
-export WINE_PREFIX="/home/pmacioci/.wine"
-PS1="[\[\033[0;32m\]\u\[\033[0m\]@\[\033[1;34m\]\h\[\033[0m\] \W]\$ "
+
+if [ "$(hostname)" == "pmacioci-lnx" ];
+then
+	export WINE_PREFIX="/home/pmacioci/.wine"
+	export JAVA_HOME=/usr/lib/jvm/java-6-sun
+	export MOZILLA_FIVE_HOME=/usr/lib64/xulrunner-1.9.2.9
+	export GDK_NATIVE_WINDOWS=true
+	PS1="[\[\e[0;32m\]\u\[\e[m\]@\[\e[1;34m\]\h\[\e[m\] \W]\[\e[1;31m\]$\[\e[m\] "
+else
+	PS1="[\[\e[0;32m\]\u\[\e[m\]@\[\e[1;34m\]\h\[\e[m\] \W]$ "
+fi
+	
+
