@@ -4,12 +4,12 @@
 [colour]
 	ui = auto
 [alias]
-	ls = log --graph --pretty=oneline --abbrev-commit --decorate
-	la = log --graph --pretty=medium --stat --abbrev-commit --decorate
-
 	st = status
 	co = checkout
 	br = branch
+	ls = log --graph --pretty=oneline --abbrev-commit --decorate
+	la = log --graph --pretty=medium --stat --abbrev-commit --decorate
+
 [color]
 	ui = auto
 [branch]
