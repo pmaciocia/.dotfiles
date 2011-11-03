@@ -4,8 +4,14 @@
 [colour]
 	ui = auto
 [alias]
-	l = log --graph --pretty=oneline --abbrev-commit --decorate
+	ls = log --graph --pretty=oneline --abbrev-commit --decorate
 	st = status
 	co = checkout
+	la = log --graph --pretty=oneline --abbrev-commit --decorate --branches --stat -n 5
+	br = branch
+	lc = log --graph --abbrev-commit --decorate --branches --stat -n 5 --pretty=tformat:\"%C(cyan)%h%Creset - %an - %ad%gs%n%-s\"
+
 [color]
 	ui = auto
+[branch]
+	autosetupmerge = true
