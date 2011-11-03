@@ -8,7 +8,6 @@
 	co = checkout
 	br = branch
 	ls = log --graph --pretty=oneline --abbrev-commit --decorate
-	lc = log --graph --abbrev-commit --decorate --branches --stat -n 5 --pretty=tformat:\"%C(cyan)%h%Creset - %an - %ad%gs%n%-s\"
 	la = log --graph --pretty=medium --stat --abbrev-commit -n 5 --decorate
 
 [color]
