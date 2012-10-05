@@ -1,12 +1,25 @@
 #! /bin/bash
 
-DOTFILES=~/.dotfiles/active
-BACKUP=~/.dotfiles/backup
+BASE=.dotfiles
+CURRENT=$BASE/current
+BACKUP=$BASE/backup
+ACTIVE=$BASE/active
 
 cd ~
 
-for f in $DOTFILES/*; 
+if [ ! -d "$BACKUP" ]
+then
+	mkdir $BACKUP
+fi
+
+if [ ! -d "$CURRENT" ]
+then
+	mkdir $CURRENT
+fi
+
+for f in $ACTIVE/*; 
 do
+	NAME=$(basename $f)
 	DOTNAME=.$(basename $f);
 	if [ -f $DOTNAME ] 
 	then
@@ -14,8 +27,15 @@ do
 		cp $DOTNAME $BACKUP/;
 	fi
 
-	ln -fs $f $DOTNAME; 
+	cp -r $f $CURRENT;
+	if [ -L "~/$DOTNAME" ] 
+	then
+		rm ~/.DOTNAME
+	fi
+
+ 	ln -fs $CURRENT/$NAME ~/$DOTNAME; 
 done
 
+# 
 
 
