@@ -33,7 +33,7 @@ do
 		rm ~/.DOTNAME
 	fi
 
- 	ln -fs $CURRENT/$NAME ~/$DOTNAME; 
+ 	ln -fvs $CURRENT/$NAME ~/$DOTNAME; 
 done
 
 # 
