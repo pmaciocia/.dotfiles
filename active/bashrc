@@ -3,5 +3,8 @@
 . ~/.bash_tmux
 . ~/.bash_aliases
 . ~/.bash_exports
-#. /etc/bash_completion
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+	. $(brew --prefix)/etc/bash_completion
+fi
 
