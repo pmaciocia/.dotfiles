@@ -1,5 +1,5 @@
 alias cl=clear
-alias ls="ls --color=auto -CF"
+alias ls="ls -CFG"
 alias l=ls
 alias la="ls -a"
 alias ll="ls -l"
