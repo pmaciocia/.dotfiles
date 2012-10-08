@@ -1,4 +1,3 @@
-#. ~/.bash_tmux
 . ~/.bash_aliases
 . ~/.bash_exports
 
