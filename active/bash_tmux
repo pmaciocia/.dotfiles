@@ -1,11 +1,24 @@
 # TMUX
-if which tmux 2>&1 >/dev/null; then
-    # if no session is started, start a new session
-	
-    test -z ${TMUX} && tmux
+if [ ! "screen" = "$TERM" ] 
+then
+	if which tmux 2>&1 >/dev/null 
+	then
+		#Use date for session name
+		NAME=$(date +%D)
+		
+		tmux -q has-session -t "$NAME"
+		
+		if[ $? -eq 0 ] 
+		then
+			tmux attach-session -t $NAME
+		else
+			# if no session is started, start a new session
+			tmux new-session -t $NAME
+		fi
 
-    # when quitting tmux, try to attach
-	#while test -z ${TMUX}; do
-		#tmux attach || break
-	#done
+		# when quitting tmux, try to attach
+		#while test -z ${TMUX}; do
+			#tmux attach || break
+		#done
+	fi
 fi

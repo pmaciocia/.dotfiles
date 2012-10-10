@@ -17,23 +17,27 @@ then
 	mkdir $CURRENT
 fi
 
-for f in $ACTIVE/*; 
+for FILE in $ACTIVE/*; 
 do
-	NAME=$(basename $f)
-	DOTNAME=.$(basename $f);
-	if [ -f $DOTNAME ] 
+	NAME=$(basename $FILE)
+	DOTNAME=.$(basename $FILE);
+	if [ -e $DOTNAME ] 
 	then
 		echo "backing up $DOTNAME";
-		cp $DOTNAME $BACKUP/;
+		#echo "cp -r $DOTNAME $BACKUP";
+		cp -r $DOTNAME $BACKUP/;
 	fi
 
-	cp -r $f $CURRENT;
-	if [ -L "~/$DOTNAME" ] 
+	#echo "cp -r $FILE $CURRENT"; 
+	cp -r $FILE $CURRENT
+	if [ -L ~/$DOTNAME ] 
 	then
-		rm ~/.DOTNAME
+		#echo "rm ~/.DOTNAME";
+		rm ~/$DOTNAME
 	fi
 
- 	ln -fvs $CURRENT/$NAME ~/$DOTNAME; 
+ 	#echo "ln -fvs $CURRENT/$NAME ~/$DOTNAME";
+ 	ln -fs $CURRENT/$NAME ~/$DOTNAME; 
 done
 
 # 
