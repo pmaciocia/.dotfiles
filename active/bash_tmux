@@ -8,12 +8,12 @@ then
 		
 		tmux -q has-session -t "$NAME"
 		
-		if[ $? -eq 0 ] 
+		if [ $? -eq 0 ];
 		then
 			tmux attach-session -t $NAME
 		else
 			# if no session is started, start a new session
-			tmux new-session -t $NAME
+			tmux new-session -s $NAME
 		fi
 
 		# when quitting tmux, try to attach
