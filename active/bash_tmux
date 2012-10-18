@@ -4,7 +4,7 @@ then
 	if which tmux 2>&1 >/dev/null 
 	then
 		#Use date for session name
-		NAME=$(date +%D)
+		NAME=$(date +%F)
 		
 		tmux -q has-session -t "$NAME"
 		
