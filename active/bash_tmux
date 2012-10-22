@@ -10,10 +10,12 @@ then
 		
 		if [ $? -eq 0 ];
 		then
-			tmux attach-session -t $NAME
+			tmux -q new-window -t "$NAME"
+			
+			tmux -q attach-session -t "$NAME"
 		else
 			# if no session is started, start a new session
-			tmux new-session -s $NAME
+			tmux -q new-session -s "$NAME"
 		fi
 
 		# when quitting tmux, try to attach
