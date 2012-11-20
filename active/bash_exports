@@ -6,21 +6,14 @@ export HISTCONTROL=ignoredups
 shopt -s histappend
 
 export GREP_OPTIONS="--color=auto"
-export WINEDEBUG=-all
 
 HOST=$(hostname)
 
 case $HOST in
 	pmacioci-lnx)
-		export WINE_PREFIX="/home/pmacioci/.wine"
-		export JAVA_HOME=/usr/lib/jvm/java-6-sun
-		export MOZILLA_FIVE_HOME=/usr/lib64/xulrunner-1.9.2.9
-		export GDK_NATIVE_WINDOWS=true
 		PS1="[\[\e[0;32m\]\u\[\e[m\]@\[\e[1;34m\]\h\[\e[m\] \W]\[\e[1;31m\]$\[\e[m\] "
 		;;
 	choch-lnx)
-		export LIBGL_DRIVERS_PATH=/usr/lib32/fglrx/dri
-		export GIT_SSH=/usr/bin/ssh
 		PS1="[\[\e[0;32m\]\u\[\e[m\]@\[\e[1;34m\]\h\[\e[m\] \W]$ "
 		;;
 	*)	
