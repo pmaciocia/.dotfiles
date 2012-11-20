@@ -1,5 +1,10 @@
 export PATH=$PATH:/usr/sbin/:/bin/:/sbin/
+
+export HISTSIZE=1000000
+export HISTFILESIZE=1000000
 export HISTCONTROL=ignoredups
+shopt -s histappend
+
 export GREP_OPTIONS="--color=auto"
 export WINEDEBUG=-all
 
