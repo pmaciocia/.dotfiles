@@ -18,5 +18,5 @@
 	enabled = 1
 
 [core]
-	autocrlf = input
+	autocrlf = false
 	safecrlf = true
