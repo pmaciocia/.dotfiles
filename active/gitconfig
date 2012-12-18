@@ -16,3 +16,7 @@
 	autosetupmerge = true
 [rerere]
 	enabled = 1
+
+[core]
+	autocrlf = input
+	safecrlf = true
