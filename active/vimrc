@@ -49,3 +49,5 @@ ab pr# System.out.println(
 ab me# // Peter Maciocia - peter.maciocia@gmail.com	 
 ab for# for( int x=0; x< ; x++ )
 ab try# try {} catch(Exception e ) {  System.out.println( e );  }
+
+call pathogen#infect()
