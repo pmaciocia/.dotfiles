@@ -1,8 +1,10 @@
 [user]
 	name = Peter Maciocia
 	email = peter.maciocia@gmail.com
+
 [colour]
 	ui = auto
+
 [alias]
 	st = status
 	co = checkout
@@ -12,8 +14,13 @@
 
 [color]
 	ui = auto
+
 [branch]
 	autosetupmerge = true
+
+[push]
+	default = tracking
+
 [rerere]
 	enabled = 1
 
