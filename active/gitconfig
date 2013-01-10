@@ -23,7 +23,3 @@
 
 [rerere]
 	enabled = 1
-
-[core]
-	autocrlf = false
-	safecrlf = true
