@@ -11,6 +11,7 @@
 	br = branch
 	ls = log --graph --pretty=oneline --abbrev-commit --decorate
 	la = log --graph --pretty=medium --stat --abbrev-commit --decorate
+	lc = log --graph --all --format=format:'%C(red)%h%C(reset) - %C(yellow)%d%C(reset) %C(white)%s%C(reset) %C(green)(%ar)%C(reset) %C(blue)<%an>%C(reset)' --abbrev-commit --date=relative
 
 [color]
 	ui = auto
