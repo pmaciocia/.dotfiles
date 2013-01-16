@@ -1,4 +1,9 @@
 
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
 . ~/.bash_tmux
 . ~/.bash_aliases
 . ~/.bash_exports
