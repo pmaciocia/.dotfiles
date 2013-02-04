@@ -1,3 +1,5 @@
+. ~/.bash_colours
+
 export PATH=$PATH:/usr/sbin/:/bin/:/sbin/
 
 export HISTSIZE=1000000
@@ -8,6 +10,9 @@ shopt -s histappend
 export GREP_OPTIONS="--color=auto"
 
 HOST=$(hostname)
+
+
+
 
 case $HOST in
 	pmacioci-lnx)
