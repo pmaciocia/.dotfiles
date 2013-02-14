@@ -11,19 +11,51 @@ export GREP_OPTIONS="--color=auto"
 
 HOST=$(hostname)
 
+function __HAS_GIT {
+	if command -v git &> /dev/null
+	then
+		return 0
+	else
+		return 1
+	fi
+}
 
+function __IN_GIT {
+	if git rev-parse --git-dir > /dev/null 2>&1
+	then 
+		return 0
+	else
+		return 1
+	fi 
+}
 
+function __GIT_BRANCH {
+	git branch | grep '*' | cut -d " " -f2
+}
 
-case $HOST in
-	pmacioci-lnx)
-		PS1="[\[\e[0;32m\]\u\[\e[m\]@\[\e[1;34m\]\h\[\e[m\] \W]\[\e[1;31m\]$\[\e[m\] "
-		;;
-	choch-lnx)
-		PS1="[\[\e[0;32m\]\u\[\e[m\]@\[\e[1;34m\]\h\[\e[m\] \W]$ "
-		;;
-	*)	
-		PS1="[\[\e[0;32m\]\u\[\e[m\]@\[\e[1;34m\]\h\[\e[m\] \W]$ "
-		;;
-esac
-	
+function __GIT_DIRTY {
+	if [[ $( git status -s 2> /dev/null | wc -l) -gt 0 ]]
+	then
+		return 0
+	else
+		return 1
+	fi	
+}
 
+function __GIT_PS1 {
+	if __HAS_GIT; then
+		if __IN_GIT; then
+			echo -n " "
+			if __GIT_DIRTY; then
+				tput setaf 1;	
+			else
+				tput setaf 2;	
+			fi
+			echo -n "$(__GIT_BRANCH)"
+			tput setaf 7
+			echo -n " "
+		fi
+	fi
+}
+
+PS1="[$Green\u$Color_Off@\[\e[1;34m\]\h\[\e[m\] \W\[\$(__GIT_PS1)\]]$ "
