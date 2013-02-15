@@ -30,7 +30,7 @@ function __IN_GIT {
 }
 
 function __GIT_BRANCH {
-	git branch | grep '*' | cut -d " " -f2
+	git branch | grep '*' | cut -d " " -f2-
 }
 
 function __GIT_DIRTY {
