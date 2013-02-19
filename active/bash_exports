@@ -58,4 +58,4 @@ function __GIT_PS1 {
 	fi
 }
 
-PS1="[$Green\u$Color_Off@\[\e[1;34m\]\h\[\e[m\] \W\[\$(__GIT_PS1)\]]$ "
+PS1="[$Green\u$Color_Off@\[$Blue\h$Color_Off \W\$(__GIT_PS1)]$ "
