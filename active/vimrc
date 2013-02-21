@@ -32,7 +32,13 @@ map <silent> <F5> :TlistToggle<CR>
 map <silent> <F6> :cn<CR>
 map <silent> <F7> :cp<CR>
 
-map  "+gP
+nmap <C-n> :bnext<CR>
+nmap <C-p> :bprev<CR>
+
+
+nmap \l :setlocal number!<CR>
+nmap \o :set paste!<CR>
+
 cmap w!! w !sudo tee % >/dev/null<CR>:e!<CR><CR>
 
 set mps+=':'
