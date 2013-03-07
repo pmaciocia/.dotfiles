@@ -47,13 +47,10 @@ function __GIT_PS1 {
 		if __IN_GIT; then
 			echo -n " "
 			if __GIT_DIRTY; then
-				tput setaf 1;	
+				echo -e " $Red$(__GIT_BRANCH)$Color_Off "
 			else
-				tput setaf 2;	
+				echo -e " $Green$(__GIT_BRANCH)$Color_Off "
 			fi
-			echo -n "$(__GIT_BRANCH)"
-			tput setaf 7
-			echo -n " "
 		fi
 	fi
 }
