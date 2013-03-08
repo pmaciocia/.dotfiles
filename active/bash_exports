@@ -45,7 +45,6 @@ function __GIT_DIRTY {
 function __GIT_PS1 {
 	if __HAS_GIT; then
 		if __IN_GIT; then
-			echo -n " "
 			if __GIT_DIRTY; then
 				echo -e " $Red$(__GIT_BRANCH)$Color_Off "
 			else
@@ -55,4 +54,8 @@ function __GIT_PS1 {
 	fi
 }
 
-PS1="[$Green\u$Color_Off@\[$BBlue\h$Color_Off \W\$(__GIT_PS1)]$ "
+prompt_cmd() {
+	PS1="[$Green\u$Color_Off@$BBlue\h$Color_Off \W$(__GIT_PS1)]$ "
+}
+
+PROMPT_COMMAND=prompt_cmd
