@@ -13,6 +13,9 @@
 	ls = log --graph --pretty=oneline --abbrev-commit --decorate
 	la = log --graph --pretty=medium --stat --abbrev-commit --decorate
 	lc = log --graph --all --format=format:'%C(red)%h%C(reset) - %C(yellow)%d%C(reset) %C(white)%s%C(reset) %C(green)(%ar)%C(reset) %C(blue)<%an>%C(reset)' --abbrev-commit --date=relative
+	fix = commit --amend --no-edit
+	ours   = "!f() { git checkout --ours $@ && git add $@; }; f"
+	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 
 [color]
 	ui = auto
@@ -25,3 +28,6 @@
 
 [rerere]
 	enabled = 1
+
+[diff]
+	algorithm = patience
