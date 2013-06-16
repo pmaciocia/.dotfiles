@@ -16,6 +16,8 @@ Bundle 'Tagbar'
 Bundle 'surround.vim'
 Bundle 'unimpaired.vim'
 Bundle 'Spaceghost/vim-matchit'
+Bundle 'scratch.vim'
+Bundle 'fugitive.vim'
 
 filetype plugin indent on
 
