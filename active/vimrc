@@ -1,10 +1,29 @@
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+Bundle 'Syntastic'
+Bundle 'The-NERD-tree'
+Bundle 'The-NERD-Commenter'
+Bundle 'ColorSchemeMenuMaker'
+Bundle 'Tagbar'
+Bundle 'surround.vim'
+Bundle 'unimpaired.vim'
+Bundle 'Spaceghost/vim-matchit'
+
+filetype plugin indent on
+
 syntax enable
 
 set confirm
 set autoindent
 set hidden
-filetype on
-filetype plugin indent on
 
 runtime macros/matchit.vim
 
