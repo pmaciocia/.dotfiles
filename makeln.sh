@@ -1,6 +1,7 @@
 #! /bin/bash
 
-BASE=.dotfiles
+HOME_DIR=~
+BASE=$HOME_DIR/.dotfiles
 CURRENT=$BASE/current
 BACKUP=$BASE/backup
 ACTIVE=$BASE/active
@@ -14,9 +15,9 @@ for FILE in $ACTIVE/*;
 do
 	NAME=$(basename $FILE)
 	DOTNAME=.$NAME;
-	if [ -e $DOTNAME ] 
+	if [ -e "$DOTNAME" ] 
 	then
-		if [ -L $DOTNAME ] 
+		if [ -L "$DOTNAME" ] 
 		then
 			# Remove any existing symbolic link
 			#echo "rm ~/.DOTNAME";
@@ -36,7 +37,7 @@ do
 
 	# Make the link from home -> current
  	#echo "ln -fvs $CURRENT/$NAME ~/$DOTNAME";
- 	ln -fs $CURRENT/$NAME ~/$DOTNAME; 
+ 	ln -fs $CURRENT/$NAME $HOME_DIR/$DOTNAME; 
 done
 
 # 

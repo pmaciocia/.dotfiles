@@ -1,4 +1,5 @@
 backup/
 current/
 active/vim/.netrwhist
+active/vim/bundle/*
 *.swp
