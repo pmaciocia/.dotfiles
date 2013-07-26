@@ -70,6 +70,8 @@ function __GIT_PS1 {
 
 prompt_cmd() {
 	PS1="[\[$Green\]\u\[$Color_Off\]@\[$BBlue\]\h\[$Color_Off\] \W\[$(__GIT_PS1)\]]$ "
+	history -a
+	history -n
 }
 
-PROMPT_COMMAND=prompt_cmd
+export PROMPT_COMMAND=prompt_cmd
