@@ -69,7 +69,24 @@ function __GIT_PS1 {
 }
 
 prompt_cmd() {
-	PS1="[\[$Green\]\u\[$Color_Off\]@\[$BBlue\]\h\[$Color_Off\] \W\[$(__GIT_PS1)\]]$ "
+
+	# Test connection type:
+	if [ -n "${SSH_CONNECTION}" ]; then
+		CONN=${BCyan}        # Connected on remote machine, via ssh (good).
+	elif [[ "${DISPLAY%%:0*}" != "" ]]; then
+		CONN=${ALERT}        # Connected on remote machine, not via ssh (bad).
+	else
+		CONN=${BBlue}        # Connected on local machine.
+	fi
+
+	# Test user type:
+	if [[ ${USER} == "root" ]]; then
+		USER=${Red}           # User is root.
+	else
+		USER=${Green}         # User is normal (well ... most of us are).
+	fi
+
+	PS1="[\[${USER}\]\u\[${Color_Off}\]@\[${CONN}\]\h\[${Color_Off}\] \W\[$(__GIT_PS1)\]]$ "
 	history -a
 	history -n
 }

@@ -62,3 +62,5 @@ On_Purple=$(tput setab 5)
 On_Cyan=$(tput setab 6)
 On_White=$(tput setab 7)
 
+ALERT=${BWhite}${On_Red}
+
