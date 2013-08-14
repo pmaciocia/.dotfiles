@@ -1,8 +1,5 @@
 
-case $- in
-    *i*) ;;
-      *) return;;
-esac
+[[ ${-#*i} != ${-} ]] || return
 
 . ~/.bash_tmux
 . ~/.bash_aliases
