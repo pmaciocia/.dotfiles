@@ -33,6 +33,8 @@ autocmd FileType python setlocal expandtab
 autocmd FileType java,c setlocal cindent
 autocmd FileType text setlocal tw=70
 
+let mapleader=","
+
 set sw=4
 set ts=4
 set incsearch
