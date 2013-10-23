@@ -31,3 +31,6 @@
 
 [diff]
 	algorithm = patience
+
+[core]
+	editor = /usr/bin/vim
