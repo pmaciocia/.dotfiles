@@ -18,6 +18,8 @@ Bundle 'unimpaired.vim'
 Bundle 'Spaceghost/vim-matchit'
 Bundle 'scratch.vim'
 Bundle 'fugitive.vim'
+Bundle 'Align'
+Bundle 'SQLUtilities'
 
 filetype plugin indent on
 
