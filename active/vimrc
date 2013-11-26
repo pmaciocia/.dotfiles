@@ -29,6 +29,8 @@ set confirm
 set autoindent
 set hidden
 
+set paste
+
 runtime macros/matchit.vim
 
 autocmd FileType python setlocal expandtab
