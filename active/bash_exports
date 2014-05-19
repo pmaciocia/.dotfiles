@@ -25,6 +25,16 @@ function tmux_cleanup {
 	fi
 }
 
+function tmux_respawn {	
+	if command -v tmux &> /dev/null
+	then
+		for PANE in $(tmux list-panes -aF "#{session_name} #{pane_id}" | grep $(tmux display-message -p '#S') | awk '{print $2}');
+		do 
+			tmux respawn-pane -t $PANE 2> /dev/null;
+		done
+	fi
+}
+
 function __HAS_GIT {
 	if command -v git &> /dev/null
 	then
