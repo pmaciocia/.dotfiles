@@ -6,6 +6,7 @@
 	ui = auto
 
 [alias]
+	p = checkout @{-1}
 	st = status
 	co = checkout
 	br = branch
