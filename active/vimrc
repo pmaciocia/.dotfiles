@@ -20,6 +20,7 @@ Bundle 'scratch.vim'
 Bundle 'fugitive.vim'
 Bundle 'Align'
 Bundle 'SQLUtilities'
+Bundle 'mattboehm/vim-unstack'
 
 filetype plugin indent on
 
