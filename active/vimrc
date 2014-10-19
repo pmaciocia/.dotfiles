@@ -20,6 +20,7 @@ Bundle 'scratch.vim'
 Bundle 'fugitive.vim'
 Bundle 'Align'
 Bundle 'SQLUtilities'
+Plugin 'fatih/vim-go'
 
 filetype plugin indent on
 
