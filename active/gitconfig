@@ -35,3 +35,4 @@
 
 [core]
 	editor = /usr/bin/vim
+	whitespace = cr-at-eol
