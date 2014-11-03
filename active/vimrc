@@ -21,7 +21,9 @@ Bundle 'fugitive.vim'
 Bundle 'Align'
 Bundle 'SQLUtilities'
 Bundle 'mattboehm/vim-unstack'
-Plugin 'fatih/vim-go'
+Bundle 'fatih/vim-go'
+Bundle 'Lokaltog/powerline'
+Bundle 'closetag.vim'
 
 filetype plugin indent on
 

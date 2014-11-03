@@ -1,6 +1,6 @@
 . ~/.bash_colours
 
-export PATH=$PATH:/usr/sbin/:/bin/:/sbin/
+export PATH=$PATH:/usr/sbin:/bin:/sbin:/usr/local/sbin
 
 export HISTSIZE=1000000
 export HISTFILESIZE=1000000
