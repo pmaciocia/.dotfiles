@@ -31,7 +31,7 @@
 	enabled = 1
 
 [diff]
-	algorithm = patience
+#	algorithm = patience
 
 [core]
 	editor = /usr/bin/vim
