@@ -54,6 +54,9 @@ set wildmenu
 set wildmode=list:longest
 set showcmd
 
+" http://got-ravings.blogspot.co.uk/2008/08/vim-pr0n-making-statuslines-that-own.html
+set statusline=%t [%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
+
 map <F2> w
 map <silent> <F3> :bn<CR>
 map <silent> <F4> :tabn<CR>
