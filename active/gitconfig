@@ -17,6 +17,8 @@
 	fix = commit --amend --no-edit
 	ours   = "!f() { git checkout --ours $@ && git add $@; }; f"
 	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
+	new = diff --cached
+	
 
 [color]
 	ui = auto
