@@ -18,7 +18,7 @@
 	ours   = "!f() { git checkout --ours $@ && git add $@; }; f"
 	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 	new = diff --cached
-	whatchanged = diff HEAD@{1}
+	whatsnew = diff HEAD@{1}
 	
 
 [color]
