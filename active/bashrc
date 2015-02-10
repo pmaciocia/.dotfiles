@@ -1,8 +1,7 @@
 
 [[ ${-#*i} != ${-} ]] || return
 
-. ~/.bash_tmux
 . ~/.bash_aliases
 . ~/.bash_exports
+. ~/.bash_tmux
 . /etc/bash_completion
-

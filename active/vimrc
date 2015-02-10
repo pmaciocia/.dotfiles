@@ -24,10 +24,15 @@ Bundle 'mattboehm/vim-unstack'
 Bundle 'fatih/vim-go'
 Bundle 'Lokaltog/powerline'
 Bundle 'closetag.vim'
+Bundle 'bling/vim-airline'
+Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
 
 syntax enable
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
 
 set confirm
 set autoindent
@@ -42,6 +47,7 @@ autocmd FileType java,c setlocal cindent
 autocmd FileType text setlocal tw=70
 
 let mapleader=","
+let g:airline_powerline_fonts = 1
 
 set sw=4
 set ts=4
@@ -57,20 +63,28 @@ set wildmode=list:longest
 set showcmd
 
 " http://got-ravings.blogspot.co.uk/2008/08/vim-pr0n-making-statuslines-that-own.html
-set statusline=%t\ [%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
+"set statusline=%t\ [%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
+set laststatus=2
+let g:airline_powerline_fonts = 1
+
 
 map <F2> w
 map <silent> <F3> :bn<CR>
 map <silent> <F4> :tabn<CR>
-map <silent> <F5> :TagbarToggle<CR>
 map <silent> <F6> :cn<CR>
 map <silent> <F7> :cp<CR>
 
 nmap <C-n> :bnext<CR>
 nmap <C-p> :bprev<CR>
 
+nmap \t :NERDTreeToggle<CR>
+nmap \T :TagbarToggle<CR>
 
+"toggle line numbers
 nmap \l :setlocal number!<CR>
+nmap \L :set relativenumber!<CR>
+
+"toggle paste mode
 nmap \o :set paste!<CR>
 
 cmap w!! w !sudo tee % >/dev/null<CR>:e!<CR><CR>
@@ -81,4 +95,5 @@ set mps+=<:>
 nnoremap Q gqap
 vnoremap Q gq
 
+" visual rename
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
