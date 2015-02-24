@@ -1,5 +1,5 @@
 # TMUX
-if [ -z $TMUX ]
+if [[ -z $TMUX ]] && [[ ! $TERM == screen* ]]
 then
 	if which tmux 2>&1 >/dev/null 
 	then
