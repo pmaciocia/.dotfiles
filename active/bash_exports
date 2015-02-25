@@ -9,6 +9,14 @@ shopt -s histappend
 
 export GREP_OPTIONS="--color=auto"
 
+if [ -z $TMUX ]; then 
+	if [ -e /usr/share/terminfo/x/xterm+256color ]; then
+			export TERM='xterm-256color'
+	else
+			export TERM='xterm-color'
+	fi
+fi
+
 HOST=$(hostname)
 
 function tmux_cleanup {
