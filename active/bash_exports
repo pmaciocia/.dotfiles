@@ -7,6 +7,8 @@ export HISTFILESIZE=1000000
 export HISTCONTROL=ignoredups
 shopt -s histappend
 
+unset SSH_ASKPASS
+
 export GREP_OPTIONS="--color=auto"
 
 if [ -z $TMUX ]; then 
