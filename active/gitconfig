@@ -17,6 +17,7 @@
 	fix = commit --amend --no-edit
 	ours   = "!f() { git checkout --ours $@ && git add $@; }; f"
 	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
+	up = "!f() { git checkout $@ && git pull --ff-only; }; f"
 	new = diff --cached
 	whatsnew = diff HEAD@{1}
 	

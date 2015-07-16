@@ -88,6 +88,10 @@ function __GIT_PS1 {
 	fi
 }
 
+function _git_up {
+	_git_branch
+}
+
 prompt_cmd() {
 
 	# Test connection type:
