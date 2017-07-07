@@ -9,8 +9,6 @@ shopt -s histappend
 
 unset SSH_ASKPASS
 
-export GREP_OPTIONS="--color=auto"
-
 if [ -z $TMUX ]; then 
 	if [ -e /usr/share/terminfo/x/xterm+256color ]; then
 			export TERM='xterm-256color'

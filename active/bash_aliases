@@ -6,3 +6,4 @@ alias ll="ls -l"
 alias ..="cd .."
 alias sshare="ssh -o ControlMaster=auto -o ControlPath=/tmp/%r@%h:%p"
 alias tmux="tmux -2"
+alias grep="grep --color=auto
