@@ -18,7 +18,7 @@
 	ours   = "!f() { git checkout --ours $@ && git add $@; }; f"
 	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 	up = "!f() { git checkout $@ && git pull --ff-only; }; f"
-	pr = "!f() { git checkout master && git pull mporium master --ff-only; git push origin; git fetch --all --prune }; f"
+	pr = "!f() { git checkout master && git pull mporium master --ff-only && git push origin && git fetch --all --prune; }; f"
 	new = diff --cached
 	whatsnew = diff HEAD@{1}
 	
