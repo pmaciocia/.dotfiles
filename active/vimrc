@@ -34,11 +34,6 @@ set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 
-set confirm
-set autoindent
-set hidden
-
-set paste
 
 runtime macros/matchit.vim
 
@@ -49,24 +44,53 @@ autocmd FileType text setlocal tw=70
 let mapleader=","
 let g:airline_powerline_fonts = 1
 
-set sw=4
-set ts=4
-set incsearch
+set confirm
+set autoindent
+set copyindent
+set showmatch
+set hidden
+
+set paste
+set showmode
+set shiftwidth=4
+set shiftround
+set tabstop=4
+set expandtab
+set smarttab
 set scrolloff=3
 
+set incsearch
 set ignorecase
 set smartcase
-set wildignore=*.o,*.obj,*.bak,*.exe,*.class
 
+set wildignore=*.o,*.obj,*.bak,*.exe,*.class
 set wildmenu
 set wildmode=list:longest
 set showcmd
+
+set nobackup
+set noswapfile
+set directory=~/.vim/.tmp,~/tmp,/tmp
+
+set title
+set visualbell
+set noerrorbells
+set cursorline
+
+set undofile
+set undodir=~/.vim/.undo,~/tmp,/tmp
 
 " http://got-ravings.blogspot.co.uk/2008/08/vim-pr0n-making-statuslines-that-own.html
 "set statusline=%t\ [%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 set laststatus=2
 let g:airline_powerline_fonts = 1
 
+" Remap j and k to act as expected when used on long, wrapped, lines
+nnoremap j gj
+nnoremap k gk
+
+" Quick yanking to the end of the line
+nnoremap Y y$
 
 map <F2> w
 map <silent> <F3> :bn<CR>
@@ -77,15 +101,16 @@ map <silent> <F7> :cp<CR>
 nmap <C-n> :bnext<CR>
 nmap <C-p> :bprev<CR>
 
-nmap \t :NERDTreeToggle<CR>
-nmap \T :TagbarToggle<CR>
+" toggle nerdtree
+nmap <leader>t :NERDTreeToggle<CR>
+nmap <leader>T :TagbarToggle<CR>
 
 "toggle line numbers
-nmap \l :setlocal number!<CR>
-nmap \L :set relativenumber!<CR>
+nmap <leader>l :setlocal number!<CR>
+nmap <leader>L :set relativenumber!<CR>
 
 "toggle paste mode
-nmap \o :set paste!<CR>
+nmap <leader>o :set paste!<CR>
 
 cmap w!! w !sudo tee % >/dev/null<CR>:e!<CR><CR>
 
@@ -97,3 +122,18 @@ vnoremap Q gq
 
 " visual rename
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
+" Strip all trailing whitespace from a file, using ,W
+nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
+
+" Quote words under cursor
+nnoremap <leader>" viW<esc>a"<esc>gvo<esc>i"<esc>gvo<esc>3l
+nnoremap <leader>' viW<esc>a'<esc>gvo<esc>i'<esc>gvo<esc>3l
+
+" Quote current selection
+" TODO: This only works for selections that are created "forwardly"
+vnoremap <leader>" <esc>a"<esc>gvo<esc>i"<esc>gvo<esc>ll
+vnoremap <leader>' <esc>a'<esc>gvo<esc>i'<esc>gvo<esc>ll
+
+" Select pasted text
+nnoremap <leader>v V`]
