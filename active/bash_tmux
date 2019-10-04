@@ -3,24 +3,27 @@ if [ -z $TMUX ]
 then
 	if which tmux 2>&1 >/dev/null 
 	then
-		#Use date for session name
-		NAME=$(date +%F)
-		
-		tmux -2 -q has-session -t "$NAME"
-		
-		if [ $? -eq 0 ];
-		then
-			tmux -2 -q new-window -t "$NAME"
-			
-			tmux -2 -q attach-session -t "$NAME"
-		else
-			# if no session is started, start a new session
-			tmux -2 -q new-session -s "$NAME"
-		fi
+       
 
-		# when quitting tmux, try to attach
-		#while test -z ${TMUX}; do
-			#tmux attach || break
-		#done
+        if [ "$TERM_PROGRAM" == "vscode" ]; then
+            tmux -2 -q attach -t vscode || tmux -2 -q new -s vscode
+        else
+            NAME=$(date +%F)
+            tmux -2 -q attach -t "$NAME" || tmux -2 -q new-session -s "$NAME"
+        fi
+
+
+		#Use date for session name
+
+		#tmux -2 -q has-session -t "$NAME"
+		
+		#if [ $? -eq 0 ];
+		#then
+			#tmux -2 -q new-window -t "$NAME"
+			#tmux -2 -q attach-session -t "$NAME"
+		#else
+			## if no session is started, start a new session
+			#tmux -2 -q new-session -s "$NAME"
+		#fi
 	fi
 fi
