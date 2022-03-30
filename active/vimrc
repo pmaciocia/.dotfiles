@@ -1,33 +1,33 @@
 set nocompatible               " be iMproved
-filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
 
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
+" Auto-install vim-plug
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-Bundle 'Syntastic'
-Bundle 'The-NERD-tree'
-Bundle 'The-NERD-Commenter'
-Bundle 'ColorSchemeMenuMaker'
-Bundle 'Tagbar'
-Bundle 'surround.vim'
-Bundle 'unimpaired.vim'
-Bundle 'Spaceghost/vim-matchit'
-Bundle 'scratch.vim'
-Bundle 'fugitive.vim'
-Bundle 'Align'
-Bundle 'SQLUtilities'
-Bundle 'mattboehm/vim-unstack'
-Bundle 'fatih/vim-go'
-Bundle 'Lokaltog/powerline'
-Bundle 'closetag.vim'
-Bundle 'bling/vim-airline'
-Bundle 'altercation/vim-colors-solarized'
 
-filetype plugin indent on
+call plug#begin('~/.vim/plugged')
+
+"Plug 'powerline/powerline'
+Plug 'Spaceghost/vim-matchit'
+Plug 'altercation/vim-colors-solarized'
+Plug 'bling/vim-airline'
+Plug 'fatih/vim-go'
+Plug 'mattboehm/vim-unstack'
+Plug 'junegunn/vim-easy-align'
+Plug 'tpope/vim-fugitive'
+Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdtree'
+Plug 'mtth/scratch.vim'
+Plug 'tpope/vim-surround'
+Plug 'preservim/tagbar'
+Plug 'tpope/vim-unimpaired'
+Plug 'vim-syntastic/Syntastic'
+
+call plug#end()
 
 syntax enable
 set background=dark
