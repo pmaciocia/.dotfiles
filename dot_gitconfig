@@ -41,3 +41,8 @@
 [core]
 	editor = /usr/bin/vim
 	whitespace = cr-at-eol
+
+[includeIf "gitdir:~/code/"]
+  path = ~/code/.gitconfig
+[url "git@github.com:"]
+	insteadOf = https://github.com/
