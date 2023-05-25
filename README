@@ -1,2 +1,17 @@
 managed used chezmoi
 
+
+references: 
+
+    - https://www.drupaldump.com/right-way-migrate-your-bashprofile-zsh
+    - https://www.chezmoi.io/quick-start/    
+    - https://dev.to/andrenbrandao/terminal-setup-with-zsh-tmux-dracula-theme-48lm
+    - https://github.com/romkatv/powerlevel10k
+
+to fix jetbrains fonts:
+
+- install fonts from p10k 
+- settings > color scheme > console font
+- use console font
+- select MesloLGS NF
+
