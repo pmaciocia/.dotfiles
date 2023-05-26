@@ -30,7 +30,8 @@
 
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-    os_icon                 # os identifier
+    #os_icon                 # os identifier
+    context
     dir                     # current directory
     vcs                     # git status
     prompt_char             # prompt symbol
@@ -80,7 +81,7 @@
     gcloud                  # google cloud cli account and project (https://cloud.google.com/)
     google_app_cred         # google application credentials (https://cloud.google.com/docs/authentication/production)
     toolbox                 # toolbox name (https://github.com/containers/toolbox)
-    context                 # user@hostname
+    #context                 # user@hostname
     nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
     ranger                  # ranger shell (https://github.com/ranger/ranger)
     nnn                     # nnn shell (https://github.com/jarun/nnn)
@@ -261,18 +262,18 @@
   # directory will be shortened only when prompt doesn't fit or when other parameters demand it
   # (see POWERLEVEL9K_DIR_MIN_COMMAND_COLUMNS and POWERLEVEL9K_DIR_MIN_COMMAND_COLUMNS_PCT below).
   # If set to `0`, directory will always be shortened to its minimum length.
-  typeset -g POWERLEVEL9K_DIR_MAX_LENGTH=80
+  typeset -g POWERLEVEL9K_DIR_MAX_LENGTH=20%
   # When `dir` segment is on the last prompt line, try to shorten it enough to leave at least this
   # many columns for typing commands.
-  typeset -g POWERLEVEL9K_DIR_MIN_COMMAND_COLUMNS=40
+  typeset -g POWERLEVEL9K_DIR_MIN_COMMAND_COLUMNS=60
   # When `dir` segment is on the last prompt line, try to shorten it enough to leave at least
   # COLUMNS * POWERLEVEL9K_DIR_MIN_COMMAND_COLUMNS_PCT * 0.01 columns for typing commands.
-  typeset -g POWERLEVEL9K_DIR_MIN_COMMAND_COLUMNS_PCT=50
+  typeset -g POWERLEVEL9K_DIR_MIN_COMMAND_COLUMNS_PCT=60
   # If set to true, embed a hyperlink into the directory. Useful for quickly
   # opening a directory in the file manager simply by clicking the link.
   # Can also be handy when the directory is shortened, as it allows you to see
   # the full directory that was used in previous commands.
-  typeset -g POWERLEVEL9K_DIR_HYPERLINK=false
+  typeset -g POWERLEVEL9K_DIR_HYPERLINK=true
 
   # Enable special styling for non-writable and non-existent directories. See POWERLEVEL9K_LOCK_ICON
   # and POWERLEVEL9K_DIR_CLASSES below.
@@ -872,11 +873,11 @@
   # Context format when in SSH without privileges: user@hostname.
   typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_TEMPLATE='%n@%m'
   # Default context format (no privileges, no SSH): user@hostname.
-  typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE='%n@%m'
+  typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE='%F{green}%n%F{white}@%F{blue}%m'
 
   # Don't show context unless running with privileges or in SSH.
   # Tip: Remove the next line to always show context.
-  typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,SUDO}_{CONTENT,VISUAL_IDENTIFIER}_EXPANSION=
+  #typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,SUDO}_{CONTENT,VISUAL_IDENTIFIER}_EXPANSION=
 
   # Custom icon.
   # typeset -g POWERLEVEL9K_CONTEXT_VISUAL_IDENTIFIER_EXPANSION='⭐'

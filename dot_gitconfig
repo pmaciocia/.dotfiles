@@ -39,7 +39,7 @@
 #	algorithm = patience
 
 [core]
-	editor = /usr/bin/vim
+	editor = code --wait --new-window
 	whitespace = cr-at-eol
 
 [includeIf "gitdir:~/code/"]
