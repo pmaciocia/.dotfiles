@@ -39,7 +39,6 @@
 #	algorithm = patience
 
 [core]
-	editor = code --wait --new-window
 	whitespace = cr-at-eol
 
 [includeIf "gitdir:~/code/"]
