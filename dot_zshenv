@@ -1,1 +1,12 @@
+
+{{ if eq .chezmoi.os "linux" }}
+{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+export PATH=${PATH}:~/bin
+# WSL-specific code
+{{   end }}
+{{ end }}
+
+{{- if eq .chezmoi.os "darwin" -}}
 export PATH=${PATH}:/opt/homebrew/bin
+{{ end -}
+
