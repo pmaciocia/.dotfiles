@@ -84,8 +84,8 @@ plugins=(
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
-    docker-completion
-)
+    docker-compose
+ docker kubectl aws)
 
 
 source $ZSH/oh-my-zsh.sh
