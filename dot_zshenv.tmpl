@@ -8,5 +8,6 @@ export PATH=${PATH}:~/bin
 
 {{- if eq .chezmoi.os "darwin" -}}
 export PATH=${PATH}:/opt/homebrew/bin
-{{ end -}
+export PATH=${PATH}:~/Library/Python/3.9/bin
+{{ end -}}
 
