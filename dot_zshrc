@@ -85,7 +85,11 @@ plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
     docker-compose
- docker kubectl aws)
+    docker 
+    kubectl 
+    aws 
+    gh
+)
 
 
 source $ZSH/oh-my-zsh.sh

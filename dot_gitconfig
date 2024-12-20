@@ -41,7 +41,8 @@
 [core]
 	whitespace = cr-at-eol
 
-[includeIf "gitdir:~/code/"]
+[includeIf "gitdir:~/code/**"]
   path = ~/code/.gitconfig
+
 [url "git@github.com:"]
 	insteadOf = https://github.com/
