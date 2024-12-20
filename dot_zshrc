@@ -89,6 +89,7 @@ plugins=(
     kubectl 
     aws 
     gh
+    asdf
 )
 
 
