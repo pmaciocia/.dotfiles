@@ -88,29 +88,6 @@ function __GIT_PS1 {
 	fi
 }
 
-function _git_up {
-	_git_branch
-
-
-function _k8s_context {
-    if command -v kubectx &> /dev/null
-    then
-        return $(kubectx -c | cut -d '/' -f 2)
-    else
-        return "" 
-    fi                                                                                                                                                                                                                                                                        
-} 
-
-function _k8s_namespace {
-    if command -v kubens &> /dev/null
-    then
-        return $(kubens -c)
-    else
-        return "" 
-    fi                                                                                                                                                                                                                                                                        
-} 
-}
-
 prompt_cmd() {
 
 	# Test connection type:

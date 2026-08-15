@@ -51,7 +51,6 @@ set copyindent
 set showmatch
 set hidden
 
-set paste
 set showmode
 set shiftwidth=4
 set shiftround
