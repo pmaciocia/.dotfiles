@@ -1,7 +1,7 @@
 
 {{ if eq .chezmoi.os "linux" }}
+export PATH=${PATH}:~/bin:/sbin:/usr/bin:/usr/sbin
 {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
-export PATH=${PATH}:~/bin
 # WSL-specific code
 {{   end }}
 {{ end }}
