@@ -13,9 +13,8 @@ call plug#begin('~/.vim/plugged')
 
 "Plug 'powerline/powerline'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
-Plug 'Spaceghost/vim-matchit'
 Plug 'altercation/vim-colors-solarized'
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
 Plug 'fatih/vim-go'
 Plug 'mattboehm/vim-unstack'
 Plug 'junegunn/vim-easy-align'
@@ -26,11 +25,9 @@ Plug 'mtth/scratch.vim'
 Plug 'tpope/vim-surround'
 Plug 'preservim/tagbar'
 Plug 'tpope/vim-unimpaired'
-Plug 'vim-syntastic/Syntastic'
 
 call plug#end()
 
-syntax enable
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
@@ -83,7 +80,6 @@ set undodir=~/.vim/.undo,~/tmp,/tmp
 " http://got-ravings.blogspot.co.uk/2008/08/vim-pr0n-making-statuslines-that-own.html
 "set statusline=%t\ [%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 set laststatus=2
-let g:airline_powerline_fonts = 1
 
 " Remap j and k to act as expected when used on long, wrapped, lines
 nnoremap j gj
