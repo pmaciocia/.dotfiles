@@ -2,9 +2,6 @@
 	name = Peter Maciocia
 	email = peter.maciocia@gmail.com
 
-[colour]
-	ui = auto
-
 [alias]
 	p = checkout @{-1}
 	st = status
@@ -18,7 +15,6 @@
 	ours   = "!f() { git checkout --ours $@ && git add $@; }; f"
 	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 	up = "!f() { git checkout $@ && git pull --ff-only; }; f"
-	pr = "!f() { git checkout master && git pull mporium master --ff-only && git push origin && git fetch --all --prune; }; f"
 	new = diff --cached
 	whatsnew = diff HEAD@{1}
 	
@@ -34,9 +30,6 @@
 
 [rerere]
 	enabled = 1
-
-[diff]
-#	algorithm = patience
 
 [core]
 	whitespace = cr-at-eol
