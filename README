@@ -1,5 +1,10 @@
 managed used chezmoi
 
+- install oh-my-zsh:
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+- install chezmoi:
+    sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply git@github.com:pmaciocia/.dotfiles.git
+
 
 references: 
 
